@@ -51,18 +51,24 @@ int main()
 
 	w(t){
 
-	    ll a, b;
-		cin>>a>>b;
-		if( a <= b)
-			cout<<"1"<<"\n";
-		else{
-			if(a % 2 == 0 && a % b == 0)
-				cout<<a/b<<"\n";
-			if(a % 2 == 0 && a % b != 0)
-				cout<<a/b + 1<<"\n";
-			if(a % 2 != 0) cout<<a<<"\n";
+		ll n, k;
+		cin >> n >> k;
+
+		ll ans = n;
+
+		for (ll j = 1; j * j <= n; j++) {
+			if (n % j == 0) {
+				if (j <= k) {
+					ans = min(ans, n / j);
+				}
+
+				if (n / j <= k) {
+					ans = min(ans, j);
+				}
+			}
 		}
 
+		cout << ans << endl;
 	}
 
 	return 0;

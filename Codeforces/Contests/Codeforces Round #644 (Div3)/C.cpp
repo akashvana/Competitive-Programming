@@ -53,41 +53,46 @@ int main()
 
 		ll n;
 		cin>>n;
-		vector<int> v(n);
-		set<int> s;
-		vector<int> even;
-		vector<int> odd;
-		vector<int> final;
-		for(int i = 0; i < n; i++)
-		{
-			cin>>v[i];
-		}
-		int cntodd = 0;
-		int cnteven = 0;
+		vi v(n);
+		int evencnt = 0;
+		int oddcnt = 0;
+		for(int i = 0; i < n; i++){
 
-		for(int i = 0; i < n; i++)
-		{
-			if(v[i] % 2 == 0){
-				int a = v[i];
-				even.pb(a);
+			cin>>v[i];
+			if(v[i] % 2 == 0)
+			{
+				evencnt++;
 			}
-			else {
-				int a = v[i];
-				odd.pb(a);
+			if(v[i] % 2 != 0)
+			{
+				oddcnt++;
 			}
-				
 		}
 		sort(v.begin(), v.end());
-		for(int i = 0; i < n-1; i++)
-		{
-			if(v[i+1] - v[i] == 1)
-			{
-				int a = v[i];
-				int b = v[i+1];
-				s.insert(a);
-				s.insert(b);
-			}
-		}
 
+		if(evencnt % 2 == 0 && oddcnt % 2 == 0)
+			cout<<"YES"<<"\n";
+		else 
+		{
+			for(int i = 0; i < n-1; i++)
+			{
+				if(v[i+1] - v[i] == 1)
+				{
+					evencnt--;
+					oddcnt--;
+				}
+				if(evencnt % 2 == 0 && oddcnt % 2 == 0)
+				{
+					cout<<"YES"<<"\n";
+					break;
+				}	
+			}
+			if(evencnt % 2 != 0 && oddcnt % 2 != 0)
+				cout<<"NO"<<"\n";	
+		}
+	}
 	return 0;
 }
+
+
+
