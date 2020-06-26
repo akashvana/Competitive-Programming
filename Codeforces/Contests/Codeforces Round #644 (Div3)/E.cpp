@@ -14,7 +14,7 @@
 #include <list>
 #include <stack>
 #include <map>
-#include <set>
+#include <set>	
 #include <functional>
 #include <numeric>
 #include <utility>
@@ -24,7 +24,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <assert.h>
+
 using namespace std;
 
 /*****All definitions*******/
@@ -52,31 +52,42 @@ int main()
 	w(t){
 		ll n;
 		cin>>n;
-		vector< vector<int> > arr(n);
-		int cnt = 0;
+		ll arr[n][n];
+		ll cnt = 0;
 		for(int i = 0; i < n; i++)
 		{
-			for(int j = 0; i < n; i++)
+			for(int  j= 0; j < n; j++)
 			{
 				cin>>arr[i][j];
 				if(arr[i][j] == 1)
 					cnt++;
 			}
 		}
-
-		int chk = 0;
-		for(int i = 0; i < n-1; i++)
+		int tot = 0;
+		for(int i = 0; i < n-2; i++)
 		{
-			for(int j = 0; j < n-1; j++)
+			for(int j = 0; j < n-2; j++)
 			{
-				if(arr[i][j] == 1 && (arr[i][j+1] == 1 || arr[i+1][j] == 1))
-		
-					chk++;					
+				if((arr[i][j] == 1 && arr[i][j+1]) || (arr[i][j] == 1 && arr[i+1][j] == 1))
+				{
+					tot++;
+				}
 			}
 		}
-		if(cnt == chk)
-			cout<<"YES"<<"\n";
-		else cout<<"NO"<<"\n";
+
+		for(int i = 0; i < n; i++)
+		{
+			if(arr[i][n-1] == 1)
+				tot++;
+		}
+
+		for(int j = 0; j < n; j++)
+		{
+			if(arr[n-1][j] == 1)
+				tot++;
+		}
+
+		cout<<tot<<"\n";
 	}
 
 
