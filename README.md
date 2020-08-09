@@ -1,4 +1,4 @@
-# Competitive-Programming
+#Competitive-Programming
 This repository consists of all the solutions to contests and questions that I have practised. 
 
 ## Codeforces
@@ -9,4 +9,7 @@ Website : <a href = "https://www.codechef.com/">Codechef</a>
 Profile : <a href = "https://www.codechef.com/users/vana01">vana01</a>  
 ## Atcoder  
 Website : <a href = "https://atcoder.jp/">Atcoder</a>  
-Profile : <a href = "https://atcoder.jp/users/vana01">vana01</a>  
+Profile : <a href = "https://atcoder.jp/users/vana01">vana01</a>
+
+
+I have been pretty careless with my ratings so far, I'm gonna work on improving them soon.  
