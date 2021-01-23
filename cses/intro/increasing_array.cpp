@@ -49,26 +49,21 @@ int main()
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 
-	int n;
+	ll n;
 	cin>>n;
-
 	vector<int> v(n);
-
 	for(int i = 0; i < n; i++){
 		cin>>v[i];
 	}
 
-	int cnt = 0;
-	for(int i = 0; i < n; i++){
-		while(v[i+1] < v[i]){
-			v[i+1]++;
-			cnt++;
+	ll cnt = 0;	
+	for(int i = 0; i < n - 1; i++){
+		if(v[i] > v[i+1]){
+			cnt += (v[i] - v[i+1]);
+			v[i+1] = v[i];
 		}
 	}
-
 	cout<<cnt;
 
-
-	return 0;	
-
+	return 0;
 }
