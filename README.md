@@ -11,4 +11,4 @@ Profile : <a href = "https://www.codechef.com/users/vana01">vana01</a>
 Website : <a href = "https://atcoder.jp/">Atcoder</a>  
 Profile : <a href = "https://atcoder.jp/users/vana01">vana01</a>
 
-  
+new laptop update  
